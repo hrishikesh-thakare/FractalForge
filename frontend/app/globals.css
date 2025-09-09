@@ -157,20 +157,54 @@
   body {
     @apply bg-background text-foreground;
     /* Enhanced gradient backgrounds with more intense colors and cultural patterns */
-    background: radial-gradient(circle at 15% 85%, rgba(234, 88, 12, 0.3) 0%, transparent 40%),
-      radial-gradient(circle at 85% 15%, rgba(22, 163, 74, 0.3) 0%, transparent 40%),
-      radial-gradient(circle at 50% 50%, rgba(220, 38, 38, 0.1) 0%, transparent 60%),
-      linear-gradient(135deg, var(--background) 0%, rgba(254, 215, 170, 0.6) 50%, rgba(253, 186, 116, 0.4) 100%);
+    background: radial-gradient(
+        circle at 15% 85%,
+        rgba(234, 88, 12, 0.3) 0%,
+        transparent 40%
+      ),
+      radial-gradient(
+        circle at 85% 15%,
+        rgba(22, 163, 74, 0.3) 0%,
+        transparent 40%
+      ),
+      radial-gradient(
+        circle at 50% 50%,
+        rgba(220, 38, 38, 0.1) 0%,
+        transparent 60%
+      ),
+      linear-gradient(
+        135deg,
+        var(--background) 0%,
+        rgba(254, 215, 170, 0.6) 50%,
+        rgba(253, 186, 116, 0.4) 100%
+      );
     background-attachment: fixed;
     background-size: 100% 100%, 100% 100%, 150% 150%, 100% 100%;
   }
 
   .dark body {
     /* Enhanced dark mode gradient with intense colors */
-    background: radial-gradient(circle at 15% 85%, rgba(251, 146, 60, 0.2) 0%, transparent 40%),
-      radial-gradient(circle at 85% 15%, rgba(34, 197, 94, 0.2) 0%, transparent 40%),
-      radial-gradient(circle at 50% 50%, rgba(239, 68, 68, 0.1) 0%, transparent 60%),
-      linear-gradient(135deg, var(--background) 0%, rgba(124, 45, 18, 0.8) 50%, rgba(154, 52, 18, 0.6) 100%);
+    background: radial-gradient(
+        circle at 15% 85%,
+        rgba(251, 146, 60, 0.2) 0%,
+        transparent 40%
+      ),
+      radial-gradient(
+        circle at 85% 15%,
+        rgba(34, 197, 94, 0.2) 0%,
+        transparent 40%
+      ),
+      radial-gradient(
+        circle at 50% 50%,
+        rgba(239, 68, 68, 0.1) 0%,
+        transparent 60%
+      ),
+      linear-gradient(
+        135deg,
+        var(--background) 0%,
+        rgba(124, 45, 18, 0.8) 50%,
+        rgba(154, 52, 18, 0.6) 100%
+      );
     background-attachment: fixed;
     background-size: 100% 100%, 100% 100%, 150% 150%, 100% 100%;
   }
@@ -178,33 +212,12 @@
 
 /* Added floating animation and cultural pattern utilities */
 @layer components {
-  .floating-element {
-    animation: float 6s ease-in-out infinite;
-  }
-
-  .floating-element:nth-child(2n) {
-    animation-delay: -2s;
-  }
-
-  .floating-element:nth-child(3n) {
-    animation-delay: -4s;
-  }
-
-  @keyframes float {
-    0%,
-    100% {
-      transform: translateY(0px) rotate(0deg);
-    }
-    33% {
-      transform: translateY(-10px) rotate(1deg);
-    }
-    66% {
-      transform: translateY(5px) rotate(-1deg);
-    }
-  }
-
   .kolam-pattern {
-    background-image: radial-gradient(circle at 1px 1px, rgba(217, 119, 6, 0.3) 1px, transparent 0);
+    background-image: radial-gradient(
+      circle at 1px 1px,
+      rgba(217, 119, 6, 0.3) 1px,
+      transparent 0
+    );
     background-size: 20px 20px;
   }
 

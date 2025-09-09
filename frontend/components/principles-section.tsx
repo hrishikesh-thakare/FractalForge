@@ -1,5 +1,11 @@
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Grid3X3, RotateCcw, Layers, Compass, Sparkles } from "lucide-react"
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Grid3X3, RotateCcw, Layers, Compass, Sparkles } from "lucide-react";
 
 const principles = [
   {
@@ -34,11 +40,14 @@ const principles = [
     color: "text-orange-500",
     bgColor: "bg-orange-500/10",
   },
-]
+];
 
 export function PrinciplesSection() {
   return (
-    <section id="learn" className="relative py-24 px-4 sm:px-6 lg:px-8">
+    <section
+      id="learn"
+      className="relative py-24 px-4 sm:px-6 lg:px-8"
+    >
       <div className="absolute inset-0 kolam-pattern opacity-5" />
 
       <div className="relative max-w-7xl mx-auto">
@@ -49,11 +58,14 @@ export function PrinciplesSection() {
           </div>
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6 text-balance">
             The Mathematics of{" "}
-            <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Sacred Art</span>
+            <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+              Sacred Art
+            </span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto text-pretty leading-relaxed">
-            Understanding the fundamental elements that make Kolam designs both mathematically precise and spiritually
-            meaningful across generations of Indian culture.
+            Understanding the fundamental elements that make Kolam designs both
+            mathematically precise and spiritually meaningful across generations
+            of Indian culture.
           </p>
         </div>
 
@@ -61,15 +73,19 @@ export function PrinciplesSection() {
           {principles.map((principle, index) => (
             <Card
               key={index}
-              className={`hover-lift glass-morphism border-0 shadow-lg ${index % 2 === 1 ? "md:mt-12" : ""}`}
+              className={`hover-lift glass-morphism border-0 shadow-lg ${
+                index % 2 === 1 ? "md:mt-12" : ""
+              }`}
             >
               <CardHeader className="pb-4">
                 <div
-                  className={`w-16 h-16 ${principle.bgColor} rounded-2xl flex items-center justify-center mb-6 floating-element`}
+                  className={`w-16 h-16 ${principle.bgColor} rounded-2xl flex items-center justify-center mb-6`}
                 >
                   <principle.icon className={`h-8 w-8 ${principle.color}`} />
                 </div>
-                <CardTitle className="text-2xl font-bold text-foreground">{principle.title}</CardTitle>
+                <CardTitle className="text-2xl font-bold text-foreground">
+                  {principle.title}
+                </CardTitle>
               </CardHeader>
               <CardContent>
                 <CardDescription className="text-base leading-relaxed text-muted-foreground">
@@ -82,11 +98,14 @@ export function PrinciplesSection() {
 
         <div className="mt-20 text-center">
           <blockquote className="text-2xl md:text-3xl font-light text-foreground italic max-w-4xl mx-auto leading-relaxed">
-            "In every dot lies infinite possibility, in every line flows eternal wisdom"
+            "In every dot lies infinite possibility, in every line flows eternal
+            wisdom"
           </blockquote>
-          <cite className="block mt-4 text-muted-foreground">— Ancient Tamil Proverb</cite>
+          <cite className="block mt-4 text-muted-foreground">
+            — Ancient Tamil Proverb
+          </cite>
         </div>
       </div>
     </section>
-  )
+  );
 }

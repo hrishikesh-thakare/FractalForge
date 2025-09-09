@@ -1,12 +1,12 @@
-import { Button } from "@/components/ui/button"
-import { ArrowDown, Sparkles, Play } from "lucide-react"
+import { Button } from "@/components/ui/button";
+import { ArrowDown, Sparkles, Play } from "lucide-react";
 
 export function Hero() {
   return (
     <section className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-br from-background via-muted/50 to-background">
-        <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-primary/5 rounded-full blur-3xl floating-element" />
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-accent/5 rounded-full blur-3xl floating-element" />
+        <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-primary/5 rounded-full blur-3xl" />
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-accent/5 rounded-full blur-3xl" />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto">
@@ -20,37 +20,36 @@ export function Hero() {
 
               <h1 className="text-5xl md:text-7xl font-bold text-foreground leading-tight text-balance static-text">
                 Traditional{" "}
-                <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Kolam</span>
+                <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+                  Kolam
+                </span>
               </h1>
 
               <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed text-pretty max-w-2xl static-text">
-                Discover the ancient Indian tradition that transforms simple grids into profound art through intricate
-                patterns of dots, lines, and geometric beauty.
+                Discover the ancient Indian tradition that transforms simple
+                grids into profound art through intricate patterns of dots,
+                lines, and geometric beauty.
               </p>
-            </div>
-
-            <div className="flex flex-col sm:flex-row gap-4 static-text">
-              <Button size="lg" className="text-lg px-8 py-4 hover-lift glass-morphism">
-                <Play className="h-5 w-5 mr-2" />
-                Start Creating
-              </Button>
-              <Button variant="outline" size="lg" className="text-lg px-8 py-4 hover-lift bg-transparent">
-                Learn Principles
-              </Button>
             </div>
 
             <div className="grid grid-cols-3 gap-8 pt-8 border-t border-border/50 static-text">
               <div className="text-center">
                 <div className="text-2xl font-bold text-primary">5000+</div>
-                <div className="text-sm text-muted-foreground">Years of Tradition</div>
+                <div className="text-sm text-muted-foreground">
+                  Years of Tradition
+                </div>
               </div>
               <div className="text-center">
                 <div className="text-2xl font-bold text-primary">100+</div>
-                <div className="text-sm text-muted-foreground">Regional Variations</div>
+                <div className="text-sm text-muted-foreground">
+                  Regional Variations
+                </div>
               </div>
               <div className="text-center">
                 <div className="text-2xl font-bold text-primary">∞</div>
-                <div className="text-sm text-muted-foreground">Possible Patterns</div>
+                <div className="text-sm text-muted-foreground">
+                  Possible Patterns
+                </div>
               </div>
             </div>
           </div>
@@ -68,48 +67,127 @@ export function Hero() {
 
               <div className="absolute inset-0 kolam-pattern rounded-full opacity-10" />
 
-              <svg viewBox="0 0 300 300" className="w-full h-full relative z-10">
+              <svg
+                viewBox="0 0 300 300"
+                className="w-full h-full relative z-10"
+              >
                 <defs>
-                  <pattern id="dots" patternUnits="userSpaceOnUse" width="30" height="30">
-                    <circle cx="15" cy="15" r="2" fill="currentColor" className="text-primary/30" />
+                  <pattern
+                    id="dots"
+                    patternUnits="userSpaceOnUse"
+                    width="30"
+                    height="30"
+                  >
+                    <circle
+                      cx="15"
+                      cy="15"
+                      r="2"
+                      fill="currentColor"
+                      className="text-primary/30"
+                    />
                   </pattern>
-                  <linearGradient id="kolamGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" stopColor="currentColor" className="text-primary" />
-                    <stop offset="100%" stopColor="currentColor" className="text-accent" />
+                  <linearGradient
+                    id="kolamGradient"
+                    x1="0%"
+                    y1="0%"
+                    x2="100%"
+                    y2="100%"
+                  >
+                    <stop
+                      offset="0%"
+                      stopColor="currentColor"
+                      className="text-primary"
+                    />
+                    <stop
+                      offset="100%"
+                      stopColor="currentColor"
+                      className="text-accent"
+                    />
                   </linearGradient>
                 </defs>
 
-                <rect width="300" height="300" fill="url(#dots)" />
+                <rect
+                  width="300"
+                  height="300"
+                  fill="url(#dots)"
+                />
 
-                <g stroke="url(#kolamGradient)" strokeWidth="3" fill="none" className="floating-element">
+                <g
+                  stroke="url(#kolamGradient)"
+                  strokeWidth="3"
+                  fill="none"
+                >
                   {/* Outer lotus petals */}
-                  {[0, 30, 60, 90, 120, 150, 180, 210, 240, 270, 300, 330].map((angle, i) => (
-                    <g key={i} transform={`rotate(${angle} 150 150)`}>
-                      <path d="M 150 50 Q 170 80 150 110 Q 130 80 150 50" strokeWidth="2" />
-                    </g>
-                  ))}
+                  {[0, 30, 60, 90, 120, 150, 180, 210, 240, 270, 300, 330].map(
+                    (angle, i) => (
+                      <g
+                        key={i}
+                        transform={`rotate(${angle} 150 150)`}
+                      >
+                        <path
+                          d="M 150 50 Q 170 80 150 110 Q 130 80 150 50"
+                          strokeWidth="2"
+                        />
+                      </g>
+                    )
+                  )}
 
                   {/* Inner geometric pattern */}
-                  <circle cx="150" cy="150" r="80" strokeWidth="2" />
-                  <circle cx="150" cy="150" r="60" strokeWidth="2" />
-                  <circle cx="150" cy="150" r="40" strokeWidth="2" />
-                  <circle cx="150" cy="150" r="20" strokeWidth="2" />
+                  <circle
+                    cx="150"
+                    cy="150"
+                    r="80"
+                    strokeWidth="2"
+                  />
+                  <circle
+                    cx="150"
+                    cy="150"
+                    r="60"
+                    strokeWidth="2"
+                  />
+                  <circle
+                    cx="150"
+                    cy="150"
+                    r="40"
+                    strokeWidth="2"
+                  />
+                  <circle
+                    cx="150"
+                    cy="150"
+                    r="20"
+                    strokeWidth="2"
+                  />
 
                   {/* Central star pattern */}
                   {[0, 45, 90, 135].map((angle, i) => (
-                    <g key={i} transform={`rotate(${angle} 150 150)`}>
-                      <line x1="150" y1="130" x2="150" y2="170" strokeWidth="3" />
-                      <line x1="130" y1="150" x2="170" y2="150" strokeWidth="3" />
+                    <g
+                      key={i}
+                      transform={`rotate(${angle} 150 150)`}
+                    >
+                      <line
+                        x1="150"
+                        y1="130"
+                        x2="150"
+                        y2="170"
+                        strokeWidth="3"
+                      />
+                      <line
+                        x1="130"
+                        y1="150"
+                        x2="170"
+                        y2="150"
+                        strokeWidth="3"
+                      />
                     </g>
                   ))}
                 </g>
               </svg>
 
-              <div className="absolute -top-4 -right-4 w-8 h-8 bg-accent rounded-full floating-element opacity-60" />
-              <div className="absolute -bottom-4 -left-4 w-6 h-6 bg-primary rounded-full floating-element opacity-80" />
+              <div className="absolute -top-4 -right-4 w-8 h-8 bg-accent rounded-full opacity-60" />
+              <div className="absolute -bottom-4 -left-4 w-6 h-6 bg-primary rounded-full opacity-80" />
             </div>
 
-            <div className="absolute -top-8 -left-8 w-20 h-20 rounded-lg overflow-hidden opacity-60 floating-element">
+            <div className="absolute -top-8 -left-8 w-20 h-20 rounded-lg overflow-hidden opacity-60">
               <img
                 src="/simple-kolam-dot-pattern-with-connecting-lines.jpg"
                 alt="Simple Kolam Pattern"
@@ -117,7 +195,7 @@ export function Hero() {
               />
             </div>
 
-            <div className="absolute -bottom-8 -right-8 w-24 h-24 rounded-lg overflow-hidden opacity-70 floating-element">
+            <div className="absolute -bottom-8 -right-8 w-24 h-24 rounded-lg overflow-hidden opacity-70">
               <img
                 src="/lotus-kolam-design-with-symmetrical-petals.jpg"
                 alt="Lotus Kolam Pattern"
@@ -127,10 +205,10 @@ export function Hero() {
           </div>
         </div>
 
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
           <ArrowDown className="h-6 w-6 text-muted-foreground" />
         </div>
       </div>
     </section>
-  )
+  );
 }

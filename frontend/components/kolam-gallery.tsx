@@ -26,11 +26,11 @@ export function KolamGallery() {
       image: "/floral-vine-kolam-pattern-with-leaves-and-flowers.jpg",
     },
     {
-      title: "Temple Gateway",
-      description: "Architectural pattern inspired by temple designs",
-      image: "/temple-gateway-kolam-pattern-with-pillars-and-arch.jpg",
+      title: "Temple Inspired Kolam",
+      description: "Architectural design inspired by temple motifs",
+      image: "/templeinspiredkolam.jpg",
     },
-  ]
+  ];
 
   return (
     <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-background to-muted/20">
@@ -40,13 +40,17 @@ export function KolamGallery() {
             Traditional Kolam Patterns
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto text-pretty">
-            Explore the rich diversity of Kolam designs, each carrying deep cultural meaning and mathematical beauty.
+            Explore the rich diversity of Kolam designs, each carrying deep
+            cultural meaning and mathematical beauty.
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {kolamPatterns.map((pattern, index) => (
-            <div key={index} className="group relative overflow-hidden rounded-xl bg-card hover-lift">
+            <div
+              key={index}
+              className="group relative overflow-hidden rounded-xl bg-card hover-lift"
+            >
               <div className="aspect-square overflow-hidden">
                 <img
                   src={pattern.image || "/placeholder.svg"}
@@ -55,8 +59,12 @@ export function KolamGallery() {
                 />
               </div>
               <div className="p-6">
-                <h3 className="text-xl font-semibold text-foreground mb-2">{pattern.title}</h3>
-                <p className="text-muted-foreground text-sm">{pattern.description}</p>
+                <h3 className="text-xl font-semibold text-foreground mb-2">
+                  {pattern.title}
+                </h3>
+                <p className="text-muted-foreground text-sm">
+                  {pattern.description}
+                </p>
               </div>
               <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
             </div>
@@ -64,5 +72,5 @@ export function KolamGallery() {
         </div>
       </div>
     </section>
-  )
+  );
 }
