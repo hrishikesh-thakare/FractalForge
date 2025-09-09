@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { GeistSans } from "geist/font/sans";
 import { GeistMono } from "geist/font/mono";
 import { Analytics } from "@vercel/analytics/next";
-import { ThemeProvider } from "@/components/theme-provider";
+import { Navigation } from "@/components/navigation";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -22,14 +22,10 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <body className={`font-sans ${GeistSans.variable} ${GeistMono.variable}`}>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="light"
-          enableSystem
-          disableTransitionOnChange
-        >
-          {children}
-        </ThemeProvider>
+        <div className="flex flex-col min-h-screen">
+          <Navigation />
+          <main className="flex-grow">{children}</main>
+        </div>
         <Analytics />
       </body>
     </html>

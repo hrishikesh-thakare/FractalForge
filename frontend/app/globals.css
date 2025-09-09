@@ -4,109 +4,101 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  /* Updated color tokens to match the new design brief with amber and green accents */
-  /* Intensified colors with more vibrant and saturated tones */
-  --background: #fef7e0; /* Warm cream background */
-  --foreground: #7c2d12; /* Deep burnt orange text */
-  --card: #fed7aa; /* Rich peach cards */
-  --card-foreground: #7c2d12; /* Deep burnt orange text on cards */
-  --popover: #fef7e0; /* Warm cream popovers */
-  --popover-foreground: #7c2d12; /* Deep burnt orange text in popovers */
-  --primary: #ea580c; /* Intense orange primary */
-  --primary-foreground: #ffffff; /* White text on primary */
-  --secondary: #16a34a; /* Vibrant green secondary */
-  --secondary-foreground: #ffffff; /* White text on secondary */
-  --muted: #fed7aa; /* Rich peach muted backgrounds */
-  --muted-foreground: #7c2d12; /* Deep burnt orange muted text */
-  --accent: #dc2626; /* Bold red accent */
-  --accent-foreground: #ffffff; /* White text on accents */
-  --destructive: #b91c1c; /* Deep red destructive */
-  --destructive-foreground: #ffffff; /* White text on destructive */
-  --border: #fdba74; /* Orange borders */
-  --input: #fef3c7; /* Light yellow input backgrounds */
-  --ring: rgba(234, 88, 12, 0.6); /* Intense orange focus rings */
-  --chart-1: #ea580c; /* Intense orange chart color */
-  --chart-2: #16a34a; /* Vibrant green chart color */
-  --chart-3: #4f46e5; /* Blue chart color */
-  --chart-4: #e11d48; /* Pink chart color */
-  --chart-5: #ca8a04; /* Golden yellow chart color */
-  --radius: 0.75rem; /* Slightly more rounded corners */
-  --sidebar: #fed7aa; /* Rich peach sidebar */
-  --sidebar-foreground: #7c2d12; /* Deep burnt orange sidebar text */
-  --sidebar-primary: #ea580c; /* Intense orange sidebar highlights */
-  --sidebar-primary-foreground: #ffffff; /* White text */
-  --sidebar-accent: #16a34a; /* Vibrant green sidebar accents */
-  --sidebar-accent-foreground: #ffffff; /* White text */
-  --sidebar-border: #fdba74; /* Orange borders */
-  --sidebar-ring: rgba(234, 88, 12, 0.6); /* Intense orange focus rings */
+  --background: #fef7e0;
+  --foreground: #7c2d12;
+  --card: #fed7aa;
+  --card-foreground: #7c2d12;
+  --popover: #fef7e0;
+  --popover-foreground: #7c2d12;
+  --primary: #ea580c;
+  --primary-foreground: #ffffff;
+  --secondary: #16a34a;
+  --secondary-foreground: #ffffff;
+  --muted: #fed7aa;
+  --muted-foreground: #7c2d12;
+  --accent: #dc2626;
+  --accent-foreground: #ffffff;
+  --destructive: #b91c1c;
+  --destructive-foreground: #ffffff;
+  --border: #fdba74;
+  --input: #fef3c7;
+  --ring: rgba(234, 88, 12, 0.6);
+  --chart-1: #ea580c;
+  --chart-2: #16a34a;
+  --chart-3: #4f46e5;
+  --chart-4: #e11d48;
+  --chart-5: #ca8a04;
+  --radius: 0.75rem;
+  --sidebar: #fed7aa;
+  --sidebar-foreground: #7c2d12;
+  --sidebar-primary: #ea580c;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #16a34a;
+  --sidebar-accent-foreground: #ffffff;
+  --sidebar-border: #fdba74;
+  --sidebar-ring: rgba(234, 88, 12, 0.6);
 }
 
 .dark {
-  /* Enhanced dark theme with warmer colors */
-  /* Enhanced dark theme with more intense and vibrant colors */
-  --background: #451a03; /* Deep burnt orange background */
-  --foreground: #fed7aa; /* Light peach text */
-  --card: #7c2d12; /* Burnt orange cards */
-  --card-foreground: #fed7aa; /* Light peach text on cards */
-  --popover: #7c2d12; /* Burnt orange popovers */
-  --popover-foreground: #fed7aa; /* Light peach text */
-  --primary: #fb923c; /* Bright orange for dark mode */
-  --primary-foreground: #451a03; /* Dark background text on primary */
-  --secondary: #22c55e; /* Bright green secondary */
-  --secondary-foreground: #451a03; /* Dark background text */
-  --muted: #7c2d12; /* Burnt orange muted */
-  --muted-foreground: #fdba74; /* Orange muted text */
-  --accent: #ef4444; /* Bright red accent for dark mode */
-  --accent-foreground: #fed7aa; /* Light peach text */
-  --border: #9a3412; /* Dark orange borders */
-  --input: #7c2d12; /* Burnt orange inputs */
-  --ring: rgba(251, 146, 60, 0.6); /* Bright orange rings */
+  --background: #451a03;
+  --foreground: #fed7aa;
+  --card: #7c2d12;
+  --card-foreground: #fed7aa;
+  --popover: #7c2d12;
+  --popover-foreground: #fed7aa;
+  --primary: #fb923c;
+  --primary-foreground: #451a03;
+  --secondary: #22c55e;
+  --secondary-foreground: #451a03;
+  --muted: #7c2d12;
+  --muted-foreground: #fdba74;
+  --accent: #ef4444;
+  --accent-foreground: #fed7aa;
+  --border: #9a3412;
+  --input: #7c2d12;
+  --ring: rgba(251, 146, 60, 0.6);
 }
 
-/* Added theme variants with cultural color schemes */
 .theme-royal {
-  /* Intensified royal theme with deeper purples and golds */
-  --background: #f3e8ff; /* Rich lavender background */
-  --foreground: #4c1d95; /* Deep royal purple text */
-  --primary: #6d28d9; /* Intense royal purple */
-  --primary-foreground: #ffffff; /* White text */
-  --secondary: #f59e0b; /* Rich gold secondary */
-  --secondary-foreground: #4c1d95; /* Deep purple text */
-  --accent: #c026d3; /* Vibrant magenta accent */
-  --accent-foreground: #ffffff; /* White text */
-  --card: #ddd6fe; /* Rich purple cards */
-  --muted: #c4b5fd; /* Purple muted */
-  --muted-foreground: #1e1b4b; /* Much darker purple for better contrast */
+  --background: #f3e8ff;
+  --foreground: #4c1d95;
+  --primary: #6d28d9;
+  --primary-foreground: #ffffff;
+  --secondary: #f59e0b;
+  --secondary-foreground: #4c1d95;
+  --accent: #c026d3;
+  --accent-foreground: #ffffff;
+  --card: #ddd6fe;
+  --muted: #c4b5fd;
+  --muted-foreground: #1e1b4b;
 }
 
 .theme-forest {
-  /* Intensified forest theme with deeper greens */
-  --background: #ecfdf5; /* Rich mint background */
-  --foreground: #14532d; /* Deep forest green text */
-  --primary: #059669; /* Intense emerald green */
-  --primary-foreground: #ffffff; /* White text */
-  --secondary: #d97706; /* Rich amber secondary */
-  --secondary-foreground: #14532d; /* Deep green text */
-  --accent: #65a30d; /* Vibrant lime accent */
-  --accent-foreground: #ffffff; /* White text */
-  --card: #a7f3d0; /* Rich green cards */
-  --muted: #6ee7b7; /* Green muted */
-  --muted-foreground: #052e16; /* Much darker green for better contrast */
+  --background: #ecfdf5;
+  --foreground: #14532d;
+  --primary: #059669;
+  --primary-foreground: #ffffff;
+  --secondary: #d97706;
+  --secondary-foreground: #14532d;
+  --accent: #65a30d;
+  --accent-foreground: #ffffff;
+  --card: #a7f3d0;
+  --muted: #6ee7b7;
+  --muted-foreground: #052e16;
 }
 
 .theme-ocean {
-  /* Intensified ocean theme with deeper blues */
-  --background: #f0f9ff; /* Rich sky blue background */
-  --foreground: #0c4a6e; /* Deep ocean blue text */
-  --primary: #0369a1; /* Intense ocean blue */
-  --primary-foreground: #ffffff; /* White text */
-  --secondary: #0891b2; /* Rich cyan secondary */
-  --secondary-foreground: #ffffff; /* White text */
-  --accent: #0284c7; /* Vibrant blue accent */
-  --accent-foreground: #ffffff; /* White text */
-  --card: #7dd3fc; /* Rich blue cards */
-  --muted: #38bdf8; /* Blue muted */
-  --muted-foreground: #0c2340; /* Much darker blue for better contrast */
+  --background: #f0f9ff;
+  --foreground: #0c4a6e;
+  --primary: #0369a1;
+  --primary-foreground: #ffffff;
+  --secondary: #0891b2;
+  --secondary-foreground: #ffffff;
+  --accent: #0284c7;
+  --accent-foreground: #ffffff;
+  --card: #7dd3fc;
+  --muted: #38bdf8;
+  --muted-foreground: #0c2340;
 }
 
 @theme inline {
@@ -156,7 +148,6 @@
   }
   body {
     @apply bg-background text-foreground;
-    /* Enhanced gradient backgrounds with more intense colors and cultural patterns */
     background: radial-gradient(
         circle at 15% 85%,
         rgba(234, 88, 12, 0.3) 0%,
@@ -183,7 +174,6 @@
   }
 
   .dark body {
-    /* Enhanced dark mode gradient with intense colors */
     background: radial-gradient(
         circle at 15% 85%,
         rgba(251, 146, 60, 0.2) 0%,
@@ -208,9 +198,68 @@
     background-attachment: fixed;
     background-size: 100% 100%, 100% 100%, 150% 150%, 100% 100%;
   }
+
+  .theme-royal body {
+    background: radial-gradient(
+        circle at 15% 85%,
+        rgba(109, 40, 217, 0.2) 0%,
+        transparent 40%
+      ),
+      radial-gradient(
+        circle at 85% 15%,
+        rgba(245, 158, 11, 0.2) 0%,
+        transparent 40%
+      ),
+      linear-gradient(
+        135deg,
+        var(--background) 0%,
+        rgba(221, 214, 254, 0.8) 100%
+      );
+    background-attachment: fixed;
+    background-size: 100% 100%, 100% 100%, 100% 100%;
+  }
+
+  .theme-forest body {
+    background: radial-gradient(
+        circle at 15% 85%,
+        rgba(5, 150, 105, 0.2) 0%,
+        transparent 40%
+      ),
+      radial-gradient(
+        circle at 85% 15%,
+        rgba(217, 119, 6, 0.2) 0%,
+        transparent 40%
+      ),
+      linear-gradient(
+        135deg,
+        var(--background) 0%,
+        rgba(167, 243, 208, 0.8) 100%
+      );
+    background-attachment: fixed;
+    background-size: 100% 100%, 100% 100%, 100% 100%;
+  }
+
+  .theme-ocean body {
+    background: radial-gradient(
+        circle at 15% 85%,
+        rgba(3, 105, 161, 0.2) 0%,
+        transparent 40%
+      ),
+      radial-gradient(
+        circle at 85% 15%,
+        rgba(8, 145, 178, 0.2) 0%,
+        transparent 40%
+      ),
+      linear-gradient(
+        135deg,
+        var(--background) 0%,
+        rgba(125, 211, 252, 0.8) 100%
+      );
+    background-attachment: fixed;
+    background-size: 100% 100%, 100% 100%, 100% 100%;
+  }
 }
 
-/* Added floating animation and cultural pattern utilities */
 @layer components {
   .kolam-pattern {
     background-image: radial-gradient(
