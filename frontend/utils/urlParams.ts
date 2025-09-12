@@ -1,84 +1,77 @@
-// frontend/utils/urlParams.ts
+import { useSearchParams } from 'next/navigation';
 
-import { useSearchParams } from "next/navigation";
+export interface KolamURLParams {
+	size: number;
+	duration: number; // milliseconds for animation duration (UI only)
+	background: string; // background color for API
+	brush: string; // brush/stroke color for API
+	initialAutoAnimate: boolean; // whether to auto-animate on initial load and generate
+}
 
-const MIN_SPEED = 1;
-const MAX_SPEED = 10;
-const MIN_DURATION = 500; // 0.5s
-const MAX_DURATION = 10000; // 10s
+export const useKolamURLParams = (): KolamURLParams => {
+	const searchParams = useSearchParams();
 
-/**
- * A custom hook to parse and validate kolam-related URL search parameters.
- */
-export const useKolamURLParams = () => {
-  const searchParams = useSearchParams();
-
-  const size = parseInt(searchParams.get("size") || "5", 10);
-  const duration = parseInt(searchParams.get("duration") || "3000", 10);
-  const initialAutoAnimate = searchParams.get("autoAnimate") === "true";
-
-  return {
-    size: Math.max(3, Math.min(15, size)), // Clamp size between 3 and 15
-    duration: Math.max(MIN_DURATION, Math.min(MAX_DURATION, duration)), // Clamp duration
-    initialAutoAnimate,
-  };
+	return {
+		size: Math.max(3, Math.min(15, parseInt(searchParams.get('size') || '7'))),
+		duration: Math.max(1000, Math.min(30000, parseInt(searchParams.get('duration') || '10000'))),
+		background: searchParams.get('background') || '#fef3c7',
+		brush: searchParams.get('brush') || '#92400e',
+		initialAutoAnimate: searchParams.get('initial-auto-animate') === 'true' // defaults to true unless explicitly set to false
+	};
 };
 
-/**
- * Updates the URL's query string with the latest kolam parameters
- * without reloading the page.
- */
-export const updateURL = (params: {
-  size: number;
-  duration: number;
-  initialAutoAnimate: boolean;
-}) => {
-  const url = new URL(window.location.href);
-  url.searchParams.set("size", String(params.size));
-  url.searchParams.set("duration", String(params.duration));
-  url.searchParams.set("autoAnimate", String(params.initialAutoAnimate));
-  window.history.pushState({}, "", url.toString());
+export const updateURL = (params: Partial<KolamURLParams>) => {
+	if (typeof window === 'undefined') return;
+
+	const url = new URL(window.location.href);
+	const searchParams = url.searchParams;
+
+	Object.entries(params).forEach(([key, value]) => {
+		if (value !== undefined && value !== null) {
+			// Convert camelCase to kebab-case for URL parameters
+			const urlKey = key === 'initialAutoAnimate' ? 'initial-auto-animate' : key;
+			searchParams.set(urlKey, value.toString());
+		}
+	});
+
+	window.history.replaceState({}, '', url.toString());
 };
 
-/**
- * Generates an embeddable URL for the kolam pattern.
- */
-export const generateEmbedURL = (params: {
-  size: number;
-  background: string;
-  brush: string;
-}): string => {
-  const url = new URL("/api/kolam", window.location.origin);
-  url.searchParams.set("size", String(params.size));
-  url.searchParams.set("background", params.background.replace("#", ""));
-  url.searchParams.set("brush", params.brush.replace("#", ""));
-  return url.toString();
-};
+export const generateEmbedURL = (params: Partial<KolamURLParams>, baseURL?: string): string => {
+	const base = baseURL || (typeof window !== 'undefined' ? window.location.origin : '');
+	const url = new URL(`${base}/api/kolam`);
 
-/**
- * Converts animation speed (1-10) to a total duration in milliseconds.
- * Uses a non-linear scale for a better feel.
- */
+	// Set default values
+	const defaults: KolamURLParams = {
+		size: 7,
+		duration: 10000, // Not used by API, but kept for interface consistency
+		background: '#fef3c7',
+		brush: '#92400e',
+		initialAutoAnimate: false
+	};
+
+	const finalParams = { ...defaults, ...params };
+
+	// Only add relevant parameters for the API
+	url.searchParams.set('size', finalParams.size.toString());
+	url.searchParams.set('background', finalParams.background);
+	url.searchParams.set('brush', finalParams.brush);
+
+	return url.toString();
+};// Convert speed (1-10) to duration in milliseconds for backward compatibility
 export const speedToDuration = (speed: number): number => {
-  const normalizedSpeed = (speed - MIN_SPEED) / (MAX_SPEED - MIN_SPEED); // 0 to 1
-  // Use an inverse relationship: higher speed = lower duration
-  // A power function (e.g., squared) makes the slider feel more responsive at higher speeds
-  const duration =
-    MAX_DURATION - Math.pow(normalizedSpeed, 2) * (MAX_DURATION - MIN_DURATION);
-  return Math.round(duration);
+	const minMs = 7500;
+	const maxMs = 15000;
+	const normalized = (speed - 1) / 9;
+	const inverted = 1 - normalized;
+	return Math.round(minMs + (maxMs - minMs) * inverted);
 };
 
-/**
- * Converts a total duration in milliseconds back to an animation speed (1-10).
- */
+// Convert duration to speed for UI display
 export const durationToSpeed = (duration: number): number => {
-  if (duration >= MAX_DURATION) return MIN_SPEED;
-  if (duration <= MIN_DURATION) return MAX_SPEED;
-
-  const normalizedDuration =
-    (duration - MIN_DURATION) / (MAX_DURATION - MIN_DURATION); // 0 to 1
-  const normalizedSpeed = Math.sqrt(1 - normalizedDuration); // Inverse of the power function
-
-  const speed = normalizedSpeed * (MAX_SPEED - MIN_SPEED) + MIN_SPEED;
-  return Math.round(speed);
+	const minMs = 7500;
+	const maxMs = 15000;
+	const inverted = (duration - minMs) / (maxMs - minMs);
+	const normalized = 1 - inverted;
+	return Math.round(1 + normalized * 9);
 };

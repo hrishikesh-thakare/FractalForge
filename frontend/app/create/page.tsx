@@ -3,13 +3,13 @@
 "use client";
 
 import { Suspense } from "react";
-import { InteractiveGrid } from "~/components/interactive-grid";
+import { KolamEditor } from "~/components/generateKolam/Kolam-Editor";
 
 export default function CreatePage() {
   return (
     <main>
       <Suspense fallback={<p>Loading Kolam Editor...</p>}>
-        <InteractiveGrid />
+        <KolamEditor/>
       </Suspense>
     </main>
   );
