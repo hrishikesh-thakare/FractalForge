@@ -4,7 +4,7 @@ import {
   CardDescription,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card";
+} from "~/components/ui/card";
 import { Grid3X3, RotateCcw, Layers, Compass, Sparkles } from "lucide-react";
 
 const principles = [
