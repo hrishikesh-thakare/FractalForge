@@ -1,0 +1,5 @@
+#Virtual environment folder
+backend/venv/
+
+#Python cache files
+backend/**/pycache/
