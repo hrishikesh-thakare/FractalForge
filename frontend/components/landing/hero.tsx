@@ -1,4 +1,6 @@
 import { ArrowDown, Sparkles, Play } from "lucide-react";
+import Link from "next/link";
+import { Button } from "~/components/ui/button";
 
 export function Hero() {
   return (
@@ -29,6 +31,28 @@ export function Hero() {
                 grids into profound art through intricate patterns of dots,
                 lines, and geometric beauty.
               </p>
+            </div>
+
+            <div className="flex flex-col sm:flex-row gap-4 static-text">
+              <Link href="/create">
+                <Button
+                  size="lg"
+                  className="text-lg px-8 py-6"
+                >
+                  <Sparkles className="mr-2 h-5 w-5" />
+                  Create Your Kolam
+                </Button>
+              </Link>
+              <Link href="/explore">
+                <Button
+                  variant="outline"
+                  size="lg"
+                  className="text-lg px-8 py-6"
+                >
+                  <Play className="mr-2 h-5 w-5" />
+                  Explore History
+                </Button>
+              </Link>
             </div>
 
             <div className="grid grid-cols-3 gap-8 pt-8 border-t border-border/50 static-text">

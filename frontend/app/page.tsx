@@ -1,7 +1,5 @@
 import { Hero } from "~/components/landing/hero";
 import { PrinciplesSection } from "~/components/landing/principles-section";
-import { CulturalSignificance } from "~/components/landing/cultural-significance";
-import { KolamGallery } from "~/components/landing/kolam-gallery";
 
 export default function Home() {
   return (
@@ -12,10 +10,6 @@ export default function Home() {
           <PrinciplesSection />
         </div>
       </div>
-      <div>
-        <CulturalSignificance />
-      </div>
-      <KolamGallery />
     </>
   );
 }

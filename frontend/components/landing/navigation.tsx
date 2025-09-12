@@ -25,11 +25,18 @@ export function Navigation() {
           <div className="hidden md:flex items-center">
             <div className="ml-10 flex items-baseline space-x-4">
               <Link
+                href="/explore"
+                className="text-foreground hover:text-primary px-3 py-2 rounded-md text-lg font-bold transition-colors"
+              >
+                Explore
+              </Link>
+              <Link
                 href="/create"
                 className="text-foreground hover:text-primary px-3 py-2 rounded-md text-lg font-bold transition-colors"
               >
                 Create Your Kolam
               </Link>
+
               <Link
                 href="/analyze"
                 className="text-foreground hover:text-primary px-3 py-2 rounded-md text-lg font-bold transition-colors"
@@ -65,6 +72,13 @@ export function Navigation() {
                 onClick={() => setIsOpen(false)}
               >
                 Create Your Kolam
+              </Link>
+              <Link
+                href="/explore"
+                className="text-foreground hover:text-primary block px-3 py-2 rounded-md text-base font-medium"
+                onClick={() => setIsOpen(false)}
+              >
+                Explore
               </Link>
               <Link
                 href="/analyze"
