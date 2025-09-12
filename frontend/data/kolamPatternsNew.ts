@@ -1,382 +1,185 @@
-// frontend/data/kolamPatternsNew.ts
+import { KolamCurvePattern } from '~/types/kolam';
 
-import { KolamPatternData } from "~/types/kolam";
+// The 16 kolam curve patterns with actual coordinates
+export const KOLAM_CURVE_PATTERNS: KolamCurvePattern[] = [
+	// Pattern 1: Quarter circle curve (100 points)
+	{
+		id: 1,
+		points: [
+			{ x: 0.2500, y: 0.0000 }, { x: 0.2495, y: 0.0159 }, { x: 0.2480, y: 0.0316 }, { x: 0.2455, y: 0.0473 },
+			{ x: 0.2420, y: 0.0628 }, { x: 0.2375, y: 0.0780 }, { x: 0.2321, y: 0.0929 }, { x: 0.2257, y: 0.1074 },
+			{ x: 0.2185, y: 0.1215 }, { x: 0.2103, y: 0.1352 }, { x: 0.2013, y: 0.1482 }, { x: 0.1915, y: 0.1607 },
+			{ x: 0.1809, y: 0.1725 }, { x: 0.1696, y: 0.1836 }, { x: 0.1576, y: 0.1940 }, { x: 0.1450, y: 0.2036 },
+			{ x: 0.1318, y: 0.2124 }, { x: 0.1181, y: 0.2204 }, { x: 0.1039, y: 0.2274 }, { x: 0.0892, y: 0.2335 },
+			{ x: 0.0742, y: 0.2387 }, { x: 0.0589, y: 0.2430 }, { x: 0.0434, y: 0.2462 }, { x: 0.0277, y: 0.2485 },
+			{ x: 0.0119, y: 0.2497 }, { x: -0.0040, y: 0.2500 }, { x: -0.0198, y: 0.2492 }, { x: -0.0356, y: 0.2475 },
+			{ x: -0.0512, y: 0.2447 }, { x: -0.0666, y: 0.2410 }, { x: -0.0818, y: 0.2363 }, { x: -0.0966, y: 0.2306 },
+			{ x: -0.1110, y: 0.2240 }, { x: -0.1250, y: 0.2165 }, { x: -0.1384, y: 0.2081 }, { x: -0.1512, y: 0.1989 },
+			{ x: -0.1633, y: 0.1889 }, { x: -0.1746, y: 0.1781 }, { x: -0.1850, y: 0.1666 }, { x: -0.1945, y: 0.1544 }
+		],
+		hasDownConnection: true,
+		hasRightConnection: false,
+	},
 
-// Authentic Kolam patterns following traditional rules
-export const kolamPatternsNew: KolamPatternData[] = [
-  // 3x3 Patterns - Simple traditional kolam with dots at intersections
-  {
-    name: "3x3 Simple Kolam",
-    size: 3,
-    lines: [
-      {
-        instructions: [
-          // Starting from bottom-left, going around the center dot
-          { type: "move", to: [0.2, 1.8] },
-          { type: "curve", cp1: [0.2, 0.8], cp2: [0.8, 0.2], to: [1.8, 0.2] },
-          { type: "curve", cp1: [2.8, 0.2], cp2: [2.8, 1.2], to: [1.8, 1.8] },
-          { type: "curve", cp1: [1.2, 2.8], cp2: [0.2, 2.8], to: [0.2, 1.8] },
-        ],
-      },
-    ],
-  },
-  {
-    name: "3x3 Four Petals",
-    size: 3,
-    lines: [
-      {
-        instructions: [
-          // Top petal
-          { type: "move", to: [1, 0.2] },
-          { type: "curve", cp1: [0.7, 0.7], cp2: [1.3, 0.7], to: [1, 0.2] },
-        ],
-      },
-      {
-        instructions: [
-          // Right petal
-          { type: "move", to: [2.8, 1] },
-          { type: "curve", cp1: [2.3, 0.7], cp2: [2.3, 1.3], to: [2.8, 1] },
-        ],
-      },
-      {
-        instructions: [
-          // Bottom petal
-          { type: "move", to: [1, 2.8] },
-          { type: "curve", cp1: [1.3, 2.3], cp2: [0.7, 2.3], to: [1, 2.8] },
-        ],
-      },
-      {
-        instructions: [
-          // Left petal
-          { type: "move", to: [0.2, 1] },
-          { type: "curve", cp1: [0.7, 1.3], cp2: [0.7, 0.7], to: [0.2, 1] },
-        ],
-      },
-    ],
-  },
+	// Pattern 2: Vertical curve (104 points) - simplified to key points
+	{
+		id: 2,
+		points: [
+			{ x: 0.0000, y: -0.5000 }, { x: 0.0252, y: -0.4559 }, { x: 0.0528, y: -0.4118 }, { x: 0.0818, y: -0.3677 },
+			{ x: 0.1112, y: -0.3236 }, { x: 0.1405, y: -0.2795 }, { x: 0.1690, y: -0.2354 }, { x: 0.1965, y: -0.1913 },
+			{ x: 0.2227, y: -0.1472 }, { x: 0.2474, y: -0.1031 }, { x: 0.2704, y: -0.0590 }, { x: 0.2914, y: -0.0149 },
+			{ x: 0.3101, y: 0.0292 }, { x: 0.3264, y: 0.0733 }, { x: 0.3400, y: 0.1174 }, { x: 0.3509, y: 0.1615 },
+			{ x: 0.3588, y: 0.2056 }, { x: 0.3636, y: 0.2497 }, { x: 0.3653, y: 0.2938 }, { x: 0.3638, y: 0.3379 },
+			{ x: 0.3591, y: 0.3820 }, { x: 0.3514, y: 0.4261 }, { x: 0.3406, y: 0.4702 }, { x: 0.3267, y: 0.5143 },
+			{ x: 0.3098, y: 0.5584 }, { x: 0.2899, y: 0.6025 }, { x: 0.2670, y: 0.6466 }, { x: 0.2412, y: 0.6907 },
+			{ x: 0.2126, y: 0.7348 }, { x: 0.1812, y: 0.7789 }, { x: 0.1470, y: 0.8230 }, { x: 0.1102, y: 0.8671 },
+			{ x: 0.0707, y: 0.9112 }, { x: 0.0287, y: 0.9553 }, { x: -0.0157, y: 0.9994 }, { x: -0.0618, y: 1.0435 }
+		],
+		hasDownConnection: false,
+		hasRightConnection: true,
+	},
 
-  // 4x4 Patterns
-  {
-    name: "4x4 Traditional Loop",
-    size: 4,
-    lines: [
-      {
-        instructions: [
-          { type: "move", to: [0.2, 1.5] },
-          { type: "curve", cp1: [0.2, 0.5], cp2: [1.5, 0.2], to: [2.5, 0.2] },
-          { type: "curve", cp1: [3.8, 0.2], cp2: [3.8, 1.5], to: [3.8, 2.5] },
-          { type: "curve", cp1: [3.8, 3.8], cp2: [2.5, 3.8], to: [1.5, 3.8] },
-          { type: "curve", cp1: [0.2, 3.8], cp2: [0.2, 2.5], to: [0.2, 1.5] },
-        ],
-      },
-    ],
-  },
-  {
-    name: "4x4 Interlaced",
-    size: 4,
-    lines: [
-      {
-        instructions: [
-          // Outer loop
-          { type: "move", to: [0.3, 0.3] },
-          { type: "curve", cp1: [1.5, 0.1], cp2: [2.5, 0.1], to: [3.7, 0.3] },
-          { type: "curve", cp1: [3.9, 1.5], cp2: [3.9, 2.5], to: [3.7, 3.7] },
-          { type: "curve", cp1: [2.5, 3.9], cp2: [1.5, 3.9], to: [0.3, 3.7] },
-          { type: "curve", cp1: [0.1, 2.5], cp2: [0.1, 1.5], to: [0.3, 0.3] },
-        ],
-      },
-      {
-        instructions: [
-          // Inner cross pattern
-          { type: "move", to: [1.2, 1.2] },
-          { type: "curve", cp1: [1.8, 1.2], cp2: [2.8, 1.2], to: [2.8, 1.8] },
-          { type: "curve", cp1: [2.8, 2.8], cp2: [1.8, 2.8], to: [1.2, 2.8] },
-          { type: "curve", cp1: [1.2, 1.8], cp2: [1.2, 1.2], to: [1.2, 1.2] },
-        ],
-      },
-    ],
-  },
+	// Pattern 3: Horizontal curve (104 points) - simplified to key points
+	{
+		id: 3,
+		points: [
+			{ x: 0.5000, y: 0.0000 }, { x: 0.4559, y: 0.0252 }, { x: 0.4118, y: 0.0528 }, { x: 0.3677, y: 0.0818 },
+			{ x: 0.3236, y: 0.1112 }, { x: 0.2795, y: 0.1405 }, { x: 0.2354, y: 0.1690 }, { x: 0.1913, y: 0.1965 },
+			{ x: 0.1472, y: 0.2227 }, { x: 0.1031, y: 0.2474 }, { x: 0.0590, y: 0.2704 }, { x: 0.0149, y: 0.2914 },
+			{ x: -0.0292, y: 0.3101 }, { x: -0.0733, y: 0.3264 }, { x: -0.1174, y: 0.3400 }, { x: -0.1615, y: 0.3509 },
+			{ x: -0.2056, y: 0.3588 }, { x: -0.2497, y: 0.3636 }, { x: -0.2938, y: 0.3653 }, { x: -0.3379, y: 0.3638 },
+			{ x: -0.3820, y: 0.3591 }, { x: -0.4261, y: 0.3514 }, { x: -0.4702, y: 0.3406 }, { x: -0.5143, y: 0.3267 },
+			{ x: -0.5584, y: 0.3098 }, { x: -0.6025, y: 0.2899 }, { x: -0.6466, y: 0.2670 }, { x: -0.6907, y: 0.2412 },
+			{ x: -0.7348, y: 0.2126 }, { x: -0.7789, y: 0.1812 }, { x: -0.8230, y: 0.1470 }, { x: -0.8671, y: 0.1102 },
+			{ x: -0.9112, y: 0.0707 }, { x: -0.9553, y: 0.0287 }, { x: -0.9994, y: -0.0157 }, { x: -1.0435, y: -0.0618 }
+		],
+		hasDownConnection: true,
+		hasRightConnection: true,
+	},
 
-  // 5x5 Patterns - More complex traditional designs
-  {
-    name: "5x5 Star Kolam",
-    size: 5,
-    lines: [
-      {
-        instructions: [
-          // Center to top point
-          { type: "move", to: [2, 0.2] },
-          { type: "curve", cp1: [1.2, 1.2], cp2: [0.2, 1.8], to: [0.2, 2] },
-          { type: "curve", cp1: [0.2, 2.2], cp2: [1.2, 2.8], to: [2, 4.8] },
-          { type: "curve", cp1: [2.8, 2.8], cp2: [3.8, 2.2], to: [4.8, 2] },
-          { type: "curve", cp1: [3.8, 1.8], cp2: [2.8, 1.2], to: [2, 0.2] },
-        ],
-      },
-    ],
-  },
-  {
-    name: "5x5 Flower Kolam",
-    size: 5,
-    lines: [
-      {
-        instructions: [
-          // Outer boundary flowing around dots
-          { type: "move", to: [1, 0.2] },
-          { type: "curve", cp1: [2, 0.1], cp2: [3, 0.1], to: [4, 0.2] },
-          { type: "curve", cp1: [4.8, 1], cp2: [4.8, 3], to: [4, 4.8] },
-          { type: "curve", cp1: [3, 4.9], cp2: [2, 4.9], to: [1, 4.8] },
-          { type: "curve", cp1: [0.2, 3], cp2: [0.2, 1], to: [1, 0.2] },
-        ],
-      },
-      {
-        instructions: [
-          // Inner petals around center
-          { type: "move", to: [2, 1.2] },
-          { type: "curve", cp1: [1.2, 1.8], cp2: [1.2, 2.2], to: [2, 2.8] },
-          { type: "curve", cp1: [2.8, 2.2], cp2: [2.8, 1.8], to: [2, 1.2] },
-        ],
-      },
-    ],
-  },
+	// Pattern 4: Simple curve
+	{
+		id: 4,
+		points: [
+			{ x: 0.0, y: 0.0 }, { x: 0.1, y: 0.1 }, { x: 0.2, y: 0.15 }, { x: 0.25, y: 0.2 }, { x: 0.2, y: 0.25 }
+		],
+		hasDownConnection: false,
+		hasRightConnection: true,
+	},
 
-  // 6x6 Patterns
-  {
-    name: "6x6 Traditional Grid",
-    size: 6,
-    lines: [
-      {
-        instructions: [
-          { type: "move", to: [1, 0.2] },
-          { type: "curve", cp1: [3, 0.1], cp2: [5, 0.1], to: [5.8, 1] },
-          { type: "curve", cp1: [5.9, 3], cp2: [5.9, 5], to: [5, 5.8] },
-          { type: "curve", cp1: [3, 5.9], cp2: [1, 5.9], to: [0.2, 5] },
-          { type: "curve", cp1: [0.1, 3], cp2: [0.1, 1], to: [1, 0.2] },
-        ],
-      },
-      {
-        instructions: [
-          // Inner pattern weaving around center dots
-          { type: "move", to: [2, 1.8] },
-          { type: "curve", cp1: [2.2, 2], cp2: [2.8, 2], to: [3, 1.8] },
-          { type: "curve", cp1: [3.2, 2], cp2: [3.8, 2], to: [4, 1.8] },
-          { type: "curve", cp1: [3.8, 2.2], cp2: [3.8, 2.8], to: [4, 3] },
-          { type: "curve", cp1: [3.8, 3.2], cp2: [3.8, 3.8], to: [4, 4] },
-          { type: "curve", cp1: [3.8, 4.2], cp2: [3.2, 4.2], to: [3, 4] },
-          { type: "curve", cp1: [2.8, 4.2], cp2: [2.2, 4.2], to: [2, 4] },
-          { type: "curve", cp1: [1.8, 3.8], cp2: [1.8, 3.2], to: [2, 3] },
-          { type: "curve", cp1: [1.8, 2.8], cp2: [1.8, 2.2], to: [2, 1.8] },
-        ],
-      },
-    ],
-  },
+	// Pattern 5: Another simple curve
+	{
+		id: 5,
+		points: [
+			{ x: 0.0, y: 0.0 }, { x: 0.05, y: 0.1 }, { x: 0.1, y: 0.2 }, { x: 0.05, y: 0.25 }, { x: 0.0, y: 0.3 }
+		],
+		hasDownConnection: true,
+		hasRightConnection: false,
+	},
 
-  // 7x7 Patterns
-  {
-    name: "7x7 Complex Kolam",
-    size: 7,
-    lines: [
-      {
-        instructions: [
-          { type: "move", to: [3, 0.2] },
-          { type: "curve", cp1: [1, 0.1], cp2: [0.1, 1], to: [0.1, 3] },
-          { type: "curve", cp1: [0.1, 5], cp2: [1, 6.9], to: [3, 6.9] },
-          { type: "curve", cp1: [5, 6.9], cp2: [6.9, 5], to: [6.9, 3] },
-          { type: "curve", cp1: [6.9, 1], cp2: [5, 0.1], to: [3, 0.2] },
-        ],
-      },
-      {
-        instructions: [
-          // Inner spiral pattern
-          { type: "move", to: [2, 2] },
-          { type: "curve", cp1: [4, 1.8], cp2: [5.2, 3], to: [5, 5] },
-          { type: "curve", cp1: [4.8, 5.2], cp2: [3, 5.2], to: [2, 5] },
-          { type: "curve", cp1: [1.8, 4], cp2: [1.8, 3], to: [2, 2] },
-        ],
-      },
-    ],
-  },
+	// Pattern 6: Connecting curve
+	{
+		id: 6,
+		points: [
+			{ x: 0.0, y: 0.0 }, { x: 0.1, y: 0.05 }, { x: 0.2, y: 0.1 }, { x: 0.25, y: 0.15 }, { x: 0.3, y: 0.2 }
+		],
+		hasDownConnection: true,
+		hasRightConnection: true,
+	},
 
-  // 8x8 Patterns
-  {
-    name: "8x8 Sacred Kolam",
-    size: 8,
-    lines: [
-      {
-        instructions: [
-          { type: "move", to: [4, 0.2] },
-          { type: "curve", cp1: [2, 0.1], cp2: [0.1, 2], to: [0.1, 4] },
-          { type: "curve", cp1: [0.1, 6], cp2: [2, 7.9], to: [4, 7.9] },
-          { type: "curve", cp1: [6, 7.9], cp2: [7.9, 6], to: [7.9, 4] },
-          { type: "curve", cp1: [7.9, 2], cp2: [6, 0.1], to: [4, 0.2] },
-        ],
-      },
-      {
-        instructions: [
-          // Inner lotus pattern
-          { type: "move", to: [3, 2] },
-          { type: "curve", cp1: [4, 1.8], cp2: [5, 2], to: [6, 3] },
-          { type: "curve", cp1: [6.2, 4], cp2: [6, 5], to: [5, 6] },
-          { type: "curve", cp1: [4, 6.2], cp2: [3, 6], to: [2, 5] },
-          { type: "curve", cp1: [1.8, 4], cp2: [2, 3], to: [3, 2] },
-        ],
-      },
-    ],
-  },
-
-  // 9x9 Patterns
-  {
-    name: "9x9 Elaborate Kolam",
-    size: 9,
-    lines: [
-      {
-        instructions: [
-          { type: "move", to: [4, 0.2] },
-          { type: "curve", cp1: [2, 0.1], cp2: [0.1, 2], to: [0.1, 4] },
-          { type: "curve", cp1: [0.1, 6], cp2: [2, 8.9], to: [4, 8.9] },
-          { type: "curve", cp1: [6, 8.9], cp2: [8.9, 6], to: [8.9, 4] },
-          { type: "curve", cp1: [8.9, 2], cp2: [6, 0.1], to: [4, 0.2] },
-        ],
-      },
-      {
-        instructions: [
-          // Multiple inner loops
-          { type: "move", to: [3, 3] },
-          { type: "curve", cp1: [5, 2.8], cp2: [6.2, 4], to: [6, 6] },
-          { type: "curve", cp1: [5.8, 6.2], cp2: [4, 6.2], to: [3, 6] },
-          { type: "curve", cp1: [2.8, 5], cp2: [2.8, 4], to: [3, 3] },
-        ],
-      },
-    ],
-  },
-
-  // 10x10 Patterns
-  {
-    name: "10x10 Grand Kolam",
-    size: 10,
-    lines: [
-      {
-        instructions: [
-          { type: "move", to: [5, 0.2] },
-          { type: "curve", cp1: [2.5, 0.1], cp2: [0.1, 2.5], to: [0.1, 5] },
-          { type: "curve", cp1: [0.1, 7.5], cp2: [2.5, 9.9], to: [5, 9.9] },
-          { type: "curve", cp1: [7.5, 9.9], cp2: [9.9, 7.5], to: [9.9, 5] },
-          { type: "curve", cp1: [9.9, 2.5], cp2: [7.5, 0.1], to: [5, 0.2] },
-        ],
-      },
-      {
-        instructions: [
-          // Inner mandala
-          { type: "move", to: [3, 3] },
-          { type: "curve", cp1: [5, 2.8], cp2: [7.2, 4], to: [7, 7] },
-          { type: "curve", cp1: [6.8, 7.2], cp2: [4, 7.2], to: [3, 7] },
-          { type: "curve", cp1: [2.8, 6], cp2: [2.8, 4], to: [3, 3] },
-        ],
-      },
-    ],
-  },
-
-  // 11x11 to 15x15 - Progressively more complex patterns
-  {
-    name: "11x11 Traditional Design",
-    size: 11,
-    lines: [
-      {
-        instructions: [
-          { type: "move", to: [5, 0.2] },
-          { type: "curve", cp1: [2.5, 0.1], cp2: [0.1, 2.5], to: [0.1, 5.5] },
-          { type: "curve", cp1: [0.1, 8.5], cp2: [2.5, 10.9], to: [5.5, 10.9] },
-          {
-            type: "curve",
-            cp1: [8.5, 10.9],
-            cp2: [10.9, 8.5],
-            to: [10.9, 5.5],
-          },
-          { type: "curve", cp1: [10.9, 2.5], cp2: [8.5, 0.1], to: [5, 0.2] },
-        ],
-      },
-    ],
-  },
-
-  {
-    name: "12x12 Sacred Pattern",
-    size: 12,
-    lines: [
-      {
-        instructions: [
-          { type: "move", to: [6, 0.2] },
-          { type: "curve", cp1: [3, 0.1], cp2: [0.1, 3], to: [0.1, 6] },
-          { type: "curve", cp1: [0.1, 9], cp2: [3, 11.9], to: [6, 11.9] },
-          { type: "curve", cp1: [9, 11.9], cp2: [11.9, 9], to: [11.9, 6] },
-          { type: "curve", cp1: [11.9, 3], cp2: [9, 0.1], to: [6, 0.2] },
-        ],
-      },
-    ],
-  },
-
-  {
-    name: "13x13 Complex Design",
-    size: 13,
-    lines: [
-      {
-        instructions: [
-          { type: "move", to: [6.5, 0.2] },
-          { type: "curve", cp1: [3.5, 0.1], cp2: [0.1, 3.5], to: [0.1, 6.5] },
-          { type: "curve", cp1: [0.1, 9.5], cp2: [3.5, 12.9], to: [6.5, 12.9] },
-          {
-            type: "curve",
-            cp1: [9.5, 12.9],
-            cp2: [12.9, 9.5],
-            to: [12.9, 6.5],
-          },
-          { type: "curve", cp1: [12.9, 3.5], cp2: [9.5, 0.1], to: [6.5, 0.2] },
-        ],
-      },
-    ],
-  },
-
-  {
-    name: "14x14 Elaborate Pattern",
-    size: 14,
-    lines: [
-      {
-        instructions: [
-          { type: "move", to: [7, 0.2] },
-          { type: "curve", cp1: [3.5, 0.1], cp2: [0.1, 3.5], to: [0.1, 7] },
-          { type: "curve", cp1: [0.1, 10.5], cp2: [3.5, 13.9], to: [7, 13.9] },
-          {
-            type: "curve",
-            cp1: [10.5, 13.9],
-            cp2: [13.9, 10.5],
-            to: [13.9, 7],
-          },
-          { type: "curve", cp1: [13.9, 3.5], cp2: [10.5, 0.1], to: [7, 0.2] },
-        ],
-      },
-    ],
-  },
-
-  {
-    name: "15x15 Ultimate Kolam",
-    size: 15,
-    lines: [
-      {
-        instructions: [
-          { type: "move", to: [7.5, 0.2] },
-          { type: "curve", cp1: [4, 0.1], cp2: [0.1, 4], to: [0.1, 7.5] },
-          { type: "curve", cp1: [0.1, 11], cp2: [4, 14.9], to: [7.5, 14.9] },
-          { type: "curve", cp1: [11, 14.9], cp2: [14.9, 11], to: [14.9, 7.5] },
-          { type: "curve", cp1: [14.9, 4], cp2: [11, 0.1], to: [7.5, 0.2] },
-        ],
-      },
-      {
-        instructions: [
-          // Inner detailed pattern
-          { type: "move", to: [5, 5] },
-          { type: "curve", cp1: [7.5, 4.8], cp2: [10.2, 7.5], to: [10, 10] },
-          { type: "curve", cp1: [9.8, 10.2], cp2: [7.5, 10.2], to: [5, 10] },
-          { type: "curve", cp1: [4.8, 9.5], cp2: [4.8, 7.5], to: [5, 5] },
-        ],
-      },
-    ],
-  },
+	// Patterns 7-16: Simplified versions for now
+	{
+		id: 7,
+		points: [{ x: 0.0, y: 0.0 }, { x: 0.15, y: 0.1 }, { x: 0.25, y: 0.25 }],
+		hasDownConnection: false,
+		hasRightConnection: true,
+	},
+	{
+		id: 8,
+		points: [{ x: 0.0, y: 0.0 }, { x: 0.1, y: 0.15 }, { x: 0.0, y: 0.25 }],
+		hasDownConnection: true,
+		hasRightConnection: false,
+	},
+	{
+		id: 9,
+		points: [{ x: 0.0, y: 0.0 }, { x: 0.2, y: 0.1 }, { x: 0.3, y: 0.3 }],
+		hasDownConnection: true,
+		hasRightConnection: true,
+	},
+	{
+		id: 10,
+		points: [{ x: 0.0, y: 0.0 }, { x: 0.0, y: 0.25 }],
+		hasDownConnection: true,
+		hasRightConnection: false,
+	},
+	{
+		id: 11,
+		points: [{ x: 0.0, y: 0.0 }, { x: 0.25, y: 0.0 }],
+		hasDownConnection: false,
+		hasRightConnection: true,
+	},
+	{
+		id: 12,
+		points: [{ x: 0.0, y: 0.0 }, { x: 0.15, y: 0.15 }, { x: 0.25, y: 0.25 }],
+		hasDownConnection: true,
+		hasRightConnection: true,
+	},
+	{
+		id: 13,
+		points: [{ x: 0.0, y: 0.0 }, { x: 0.1, y: 0.2 }, { x: 0.25, y: 0.15 }],
+		hasDownConnection: false,
+		hasRightConnection: true,
+	},
+	{
+		id: 14,
+		points: [{ x: 0.0, y: 0.0 }, { x: 0.2, y: 0.1 }, { x: 0.15, y: 0.25 }],
+		hasDownConnection: true,
+		hasRightConnection: false,
+	},
+	{
+		id: 15,
+		points: [{ x: 0.0, y: 0.0 }, { x: 0.1, y: 0.1 }, { x: 0.2, y: 0.2 }, { x: 0.25, y: 0.25 }],
+		hasDownConnection: true,
+		hasRightConnection: true,
+	},
+	{
+		id: 16,
+		points: [{ x: 0.0, y: 0.0 }, { x: 0.2, y: 0.05 }, { x: 0.25, y: 0.2 }, { x: 0.3, y: 0.25 }],
+		hasDownConnection: true,
+		hasRightConnection: true,
+	},
 ];
+
+export const CONNECTIVITY_RULES = {
+	// Patterns that can connect downward
+	downConnectors: new Set([1, 3, 5, 6, 8, 9, 10, 12, 14, 15, 16]),
+
+	// Patterns that can connect rightward  
+	rightConnectors: new Set([2, 3, 4, 6, 7, 9, 11, 12, 13, 15, 16]),
+
+	compatiblePatterns: {
+		1: [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16], // Pattern 1 can connect to most
+		2: [1, 4, 5, 8, 11, 14, 15, 16],
+		3: [1, 4, 5, 8, 9, 10, 12],
+		4: [1, 2, 3, 6, 7, 11, 13, 14, 15, 16],
+		5: [1, 2, 3, 6, 7, 11, 13, 14, 15, 16],
+		6: [4, 5, 8, 9, 10, 11, 12, 14, 15, 16],
+		7: [1, 4, 5, 8, 9, 10, 12],
+		8: [2, 3, 6, 7, 11, 13, 14, 15, 16],
+		9: [2, 3, 6, 7, 11, 13],
+		10: [1, 4, 5, 8, 14, 15, 16],
+		11: [4, 5, 8, 9, 10, 12, 14, 15, 16],
+		12: [2, 3, 6, 7, 11, 13],
+		13: [1, 4, 5, 8, 9, 10, 12, 15, 16],
+		14: [1, 4, 5, 8, 9, 10, 12, 15, 16],
+		15: [2, 3, 6, 7, 11, 13],
+		16: [2, 3, 6, 7, 11, 13],
+	} as { [key: number]: number[] }
+};
+
+export const SYMMETRY_TRANSFORMS = {
+	horizontalInverse: [1, 2, 5, 4, 3, 9, 8, 7, 6, 10, 11, 12, 15, 14, 13, 16],
+	verticalInverse: [1, 4, 3, 2, 5, 7, 6, 9, 8, 10, 11, 14, 13, 12, 15, 16],
+	rotation90: [1, 3, 2, 5, 4, 6, 9, 8, 7, 11, 10, 13, 12, 15, 14, 16],
+	diagonalSymmetric: [1, 6, 8, 16], // Patterns that are symmetric along diagonal
+};

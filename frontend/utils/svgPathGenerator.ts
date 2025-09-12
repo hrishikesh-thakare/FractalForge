@@ -1,44 +1,29 @@
-// frontend/utils/svgPathGenerator.ts
+import { CurvePoint } from '~/types/kolam';
 
-import { Grid, PathInstruction } from "~/types/kolam";
+/**
+ * Generate SVG path string from curve points using quadratic Bezier curves
+ * @param curvePoints Array of curve points to convert to SVG path
+ * @returns SVG path string (e.g., "M 10 10 Q 15 5 20 10")
+ */
+export function generateSVGPath(curvePoints?: CurvePoint[]): string {
+	if (!curvePoints || curvePoints.length === 0) return '';
 
-export class SVGPathGenerator {
-  /**
-   * Converts abstract [row, col] coordinates to SVG [x, y] coordinates.
-   */
-  private static gridToSvgCoords(
-    point: [number, number],
-    grid: Grid,
-    padding = 50,
-    scale = 100
-  ): [number, number] {
-    const [row, col] = point;
-    const x = col * scale + padding;
-    const y = row * scale + padding;
-    return [x, y];
-  }
+	let path = `M ${curvePoints[0].x} ${curvePoints[0].y}`;
 
-  /**
-   * Generates an SVG path string from a series of high-level instructions.
-   */
-  static generatePathFromInstructions(
-    instructions: PathInstruction[],
-    grid: Grid
-  ): string {
-    let pathData = "";
+	for (let i = 1; i < curvePoints.length; i++) {
+		const point = curvePoints[i];
+		const prevPoint = curvePoints[i - 1];
 
-    instructions.forEach((instruction) => {
-      if (instruction.type === "move") {
-        const [x, y] = this.gridToSvgCoords(instruction.to, grid);
-        pathData += `M ${x} ${y} `;
-      } else if (instruction.type === "curve") {
-        const [cp1x, cp1y] = this.gridToSvgCoords(instruction.cp1, grid);
-        const [cp2x, cp2y] = this.gridToSvgCoords(instruction.cp2, grid);
-        const [tox, toy] = this.gridToSvgCoords(instruction.to, grid);
-        pathData += `C ${cp1x} ${cp1y}, ${cp2x} ${cp2y}, ${tox} ${toy} `;
-      }
-    });
+		// Use quadratic Bezier curves for smooth lines
+		if (point.controlX !== undefined && point.controlY !== undefined) {
+			path += ` Q ${point.controlX} ${point.controlY} ${point.x} ${point.y}`;
+		} else {
+			// Create smooth curves using the midpoint as control
+			const controlX = (prevPoint.x + point.x) / 2;
+			const controlY = (prevPoint.y + point.y) / 2;
+			path += ` Q ${controlX} ${controlY} ${point.x} ${point.y}`;
+		}
+	}
 
-    return pathData.trim();
-  }
+	return path;
 }

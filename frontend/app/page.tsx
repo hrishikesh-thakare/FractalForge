@@ -1,7 +1,7 @@
-import { Hero } from "~/components/hero";
-import { PrinciplesSection } from "~/components/principles-section";
-import { CulturalSignificance } from "~/components/cultural-significance";
-import { KolamGallery } from "~/components/kolam-gallery";
+import { Hero } from "~/components/landing/hero";
+import { PrinciplesSection } from "~/components/landing/principles-section";
+import { CulturalSignificance } from "~/components/landing/cultural-significance";
+import { KolamGallery } from "~/components/landing/kolam-gallery";
 
 export default function Home() {
   return (
