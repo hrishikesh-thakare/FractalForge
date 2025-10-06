@@ -15,19 +15,9 @@ export function Navigation() {
           <div className="flex items-center">
             <Link
               href="/"
-              className="flex items-center space-x-3 group"
+              className="text-2xl font-bold text-primary"
             >
-              {/* Kolam-inspired Logo SVG */}
-              <div className="relative">
-                <img src="/kolam_icon.svg" alt="Kolam Icon" className="h-8 w-8" />
-                
-              </div>
-              <span
-                className="text-2xl font-bold text-primary group-hover:text-primary/80 transition-colors duration-300"
-                style={{ color: "#7c2d12" }}
-              >
-                FractalForge
-              </span>
+              FractalForge
             </Link>
           </div>
 
