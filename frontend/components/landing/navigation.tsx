@@ -19,164 +19,8 @@ export function Navigation() {
             >
               {/* Kolam-inspired Logo SVG */}
               <div className="relative">
-                <svg
-                  width="40"
-                  height="40"
-                  viewBox="0 0 40 40"
-                  className="text-primary group-hover:scale-105 transition-transform duration-300"
-                  style={{ color: "#7c2d12" }}
-                >
-                  {/* Outer ring of dots */}
-                  <circle
-                    cx="20"
-                    cy="6"
-                    r="1.5"
-                    fill="currentColor"
-                    opacity="0.8"
-                  />
-                  <circle
-                    cx="28"
-                    cy="8"
-                    r="1.5"
-                    fill="currentColor"
-                    opacity="0.8"
-                  />
-                  <circle
-                    cx="34"
-                    cy="20"
-                    r="1.5"
-                    fill="currentColor"
-                    opacity="0.8"
-                  />
-                  <circle
-                    cx="28"
-                    cy="32"
-                    r="1.5"
-                    fill="currentColor"
-                    opacity="0.8"
-                  />
-                  <circle
-                    cx="20"
-                    cy="34"
-                    r="1.5"
-                    fill="currentColor"
-                    opacity="0.8"
-                  />
-                  <circle
-                    cx="12"
-                    cy="32"
-                    r="1.5"
-                    fill="currentColor"
-                    opacity="0.8"
-                  />
-                  <circle
-                    cx="6"
-                    cy="20"
-                    r="1.5"
-                    fill="currentColor"
-                    opacity="0.8"
-                  />
-                  <circle
-                    cx="12"
-                    cy="8"
-                    r="1.5"
-                    fill="currentColor"
-                    opacity="0.8"
-                  />
-
-                  {/* Inner ring of dots */}
-                  <circle
-                    cx="20"
-                    cy="12"
-                    r="1.2"
-                    fill="currentColor"
-                    opacity="0.9"
-                  />
-                  <circle
-                    cx="25"
-                    cy="15"
-                    r="1.2"
-                    fill="currentColor"
-                    opacity="0.9"
-                  />
-                  <circle
-                    cx="28"
-                    cy="20"
-                    r="1.2"
-                    fill="currentColor"
-                    opacity="0.9"
-                  />
-                  <circle
-                    cx="25"
-                    cy="25"
-                    r="1.2"
-                    fill="currentColor"
-                    opacity="0.9"
-                  />
-                  <circle
-                    cx="20"
-                    cy="28"
-                    r="1.2"
-                    fill="currentColor"
-                    opacity="0.9"
-                  />
-                  <circle
-                    cx="15"
-                    cy="25"
-                    r="1.2"
-                    fill="currentColor"
-                    opacity="0.9"
-                  />
-                  <circle
-                    cx="12"
-                    cy="20"
-                    r="1.2"
-                    fill="currentColor"
-                    opacity="0.9"
-                  />
-                  <circle
-                    cx="15"
-                    cy="15"
-                    r="1.2"
-                    fill="currentColor"
-                    opacity="0.9"
-                  />
-
-                  {/* Center dot */}
-                  <circle
-                    cx="20"
-                    cy="20"
-                    r="2"
-                    fill="currentColor"
-                  />
-
-                  {/* Connecting curves - Kolam style */}
-                  <path
-                    d="M 20 12 Q 25 15 28 20 Q 25 25 20 28 Q 15 25 12 20 Q 15 15 20 12"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="1.5"
-                    opacity="0.6"
-                  />
-
-                  {/* Outer decorative curves */}
-                  <path
-                    d="M 20 6 Q 30 10 34 20 Q 30 30 20 34 Q 10 30 6 20 Q 10 10 20 6"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="1"
-                    opacity="0.4"
-                  />
-
-                  {/* Inner decorative pattern */}
-                  <path
-                    d="M 18 18 L 22 18 L 22 22 L 18 22 Z"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="0.8"
-                    opacity="0.7"
-                  />
-                </svg>
+                <img src="/kolam_icon.svg" alt="Kolam Icon" className="h-8 w-8" />
+                
               </div>
               <span
                 className="text-2xl font-bold text-primary group-hover:text-primary/80 transition-colors duration-300"
@@ -200,14 +44,14 @@ export function Navigation() {
                 href="/create"
                 className="text-foreground hover:text-primary px-3 py-2 rounded-md text-lg font-bold transition-colors"
               >
-                Create Your Kolam
+                Create Kolam
               </Link>
 
               <Link
                 href="/analyze"
                 className="text-foreground hover:text-primary px-3 py-2 rounded-md text-lg font-bold transition-colors"
               >
-                Analyze Your Kolam
+                Analyze Kolam
               </Link>
             </div>
           </div>
@@ -233,13 +77,6 @@ export function Navigation() {
           <div className="md:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
               <Link
-                href="/create"
-                className="text-foreground hover:text-primary block px-3 py-2 rounded-md text-base font-medium"
-                onClick={() => setIsOpen(false)}
-              >
-                Create Your Kolam
-              </Link>
-              <Link
                 href="/explore"
                 className="text-foreground hover:text-primary block px-3 py-2 rounded-md text-base font-medium"
                 onClick={() => setIsOpen(false)}
@@ -247,11 +84,19 @@ export function Navigation() {
                 Explore
               </Link>
               <Link
+                href="/create"
+                className="text-foreground hover:text-primary block px-3 py-2 rounded-md text-base font-medium"
+                onClick={() => setIsOpen(false)}
+              >
+                Create Kolam
+              </Link>
+              
+              <Link
                 href="/analyze"
                 className="text-foreground hover:text-primary block px-3 py-2 rounded-md text-base font-medium"
                 onClick={() => setIsOpen(false)}
               >
-                Analyze Your Kolam
+                Analyze Kolam
               </Link>
             </div>
           </div>

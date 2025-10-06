@@ -7,7 +7,7 @@ import { Footer } from "~/components/layout/footer";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "My Website",
+  title: "FractalForge",
   icons: {
     icon: "/kolam_icon.svg", // or "/favicon.png"
   },
