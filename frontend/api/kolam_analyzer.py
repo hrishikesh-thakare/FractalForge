@@ -76,7 +76,7 @@ def analyze_kolam(image_stream):
         "classification": design_type,
     }
 
-@app.route("/analyze", methods=["POST"])
+@app.route("/api/kolam_analyzer", methods=["POST"])
 def analyze():
     if 'file' not in request.files:
         return jsonify({"error": "No file part"}), 400
@@ -90,6 +90,7 @@ def analyze():
         except Exception as e:
             return jsonify({"error": str(e)}), 500
 
+# This part is for local development and will be ignored by Vercel
 if __name__ == "__main__":
     app.run(debug=True, port=5001)
 
