@@ -180,21 +180,12 @@ export const KolamEditor: React.FC = () => {
   return (
     <div className="kolam-editor bg-amber-100 text-amber-900 min-h-screen">
       {/* Header */}
-      <header
-        className="p-6 text-white"
-        // style={{ backgroundColor: "#5ba293" }}
-      >
+      <header className="p-6 text-white" style={{ backgroundColor: "#5ba293" }}>
         <div className="max-w-6xl mx-auto">
-          <h1
-            className="text-center md:text-6xl font-bold text-foreground mb-4 text-balance"
-            style={{ color: "#7c2d12" }}
-          >
+          <h1 className="text-4xl font-bold text-center tracking-wide">
             Kolam Generator
           </h1>
-          <p
-            className="text-center md:text-2xl text-muted-foreground max-w-3xl mx-auto text-pretty"
-            style={{ color: "#7c2d12" }}
-          >
+          <p className="text-center mt-2 text-lg opacity-90">
             Generate beautiful traditional kolam patterns with ease.
           </p>
         </div>
@@ -217,7 +208,7 @@ export const KolamEditor: React.FC = () => {
               />
 
               {/* Save button overlaid on canvas */}
-              {/* {currentPattern && (
+              {currentPattern && (
                 <div className="absolute top-4 right-4">
                   <div className="relative download-menu">
                     <button
@@ -276,7 +267,7 @@ export const KolamEditor: React.FC = () => {
                     )}
                   </div>
                 </div>
-              )} */}
+              )}
             </div>
           ) : (
             <div className="no-pattern text-center py-12 bg-amber-900 border-2 border-white rounded-2xl">

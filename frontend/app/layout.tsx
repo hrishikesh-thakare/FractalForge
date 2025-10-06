@@ -6,13 +6,6 @@ import { Navigation } from "~/components/landing/navigation";
 import { Footer } from "~/components/layout/footer";
 import "./globals.css";
 
-export const metadata: Metadata = {
-  title: "My Website",
-  icons: {
-    icon: "/kolam_icon.svg", // or "/favicon.png"
-  },
-};
-
 export default function RootLayout({
   children,
 }: Readonly<{
