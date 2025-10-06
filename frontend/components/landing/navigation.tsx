@@ -34,14 +34,14 @@ export function Navigation() {
                 href="/create"
                 className="text-foreground hover:text-primary px-3 py-2 rounded-md text-lg font-bold transition-colors"
               >
-                Create Your Kolam
+                Create Kolam
               </Link>
 
               <Link
                 href="/analyze"
                 className="text-foreground hover:text-primary px-3 py-2 rounded-md text-lg font-bold transition-colors"
               >
-                Analyze Your Kolam
+                Analyze Kolam
               </Link>
             </div>
           </div>
@@ -67,13 +67,6 @@ export function Navigation() {
           <div className="md:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
               <Link
-                href="/create"
-                className="text-foreground hover:text-primary block px-3 py-2 rounded-md text-base font-medium"
-                onClick={() => setIsOpen(false)}
-              >
-                Create Your Kolam
-              </Link>
-              <Link
                 href="/explore"
                 className="text-foreground hover:text-primary block px-3 py-2 rounded-md text-base font-medium"
                 onClick={() => setIsOpen(false)}
@@ -81,11 +74,19 @@ export function Navigation() {
                 Explore
               </Link>
               <Link
+                href="/create"
+                className="text-foreground hover:text-primary block px-3 py-2 rounded-md text-base font-medium"
+                onClick={() => setIsOpen(false)}
+              >
+                Create Kolam
+              </Link>
+              
+              <Link
                 href="/analyze"
                 className="text-foreground hover:text-primary block px-3 py-2 rounded-md text-base font-medium"
                 onClick={() => setIsOpen(false)}
               >
-                Analyze Your Kolam
+                Analyze Kolam
               </Link>
             </div>
           </div>
