@@ -60,7 +60,7 @@ export default function AnalyzeKolamPage() {
 
     try {
       // Send the image to the Python backend
-      const response = await fetch("http://127.0.0.1:5001/analyze", {
+      const response = await fetch("/api/kolam_analyzer", {
         method: "POST",
         body: formData,
       });
